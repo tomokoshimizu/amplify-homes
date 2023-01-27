@@ -34,11 +34,9 @@ export default function HomeCardCollection(props) {
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="grid"
+      type="list"
       searchPlaceholder="Search..."
-      templateColumns="1fr 1fr 1fr"
-      autoFlow="row"
-      alignItems="stretch"
+      direction="column"
       justifyContent="stretch"
       items={items || []}
       {...getOverrideProps(overrides, "HomeCardCollection")}
