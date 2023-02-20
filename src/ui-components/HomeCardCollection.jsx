@@ -16,9 +16,7 @@ import HomeCard from "./HomeCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function HomeCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsPagination = {
-    sort: (s) => s.createdAt(SortDirection.DESCENDING),
-  };
+  const itemsPagination = { sort: (s) => s.createdAt(SortDirection.ASCENDING) };
   const [items, setItems] = React.useState(undefined);
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
@@ -34,9 +32,11 @@ export default function HomeCardCollection(props) {
   }, [itemsProp, itemsDataStore]);
   return (
     <Collection
-      type="list"
+      type="grid"
       searchPlaceholder="Search..."
-      direction="column"
+      templateColumns="1fr 1fr 1fr"
+      autoFlow="row"
+      alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
       {...getOverrideProps(overrides, "HomeCardCollection")}

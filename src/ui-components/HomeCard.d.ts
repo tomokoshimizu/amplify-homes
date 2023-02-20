@@ -12,6 +12,7 @@ export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes
 export declare type HomeCardOverridesProps = {
     HomeCard?: PrimitiveOverrideProps<ViewProps>;
     "image 1"?: PrimitiveOverrideProps<ImageProps>;
+    "Group 1"?: PrimitiveOverrideProps<ViewProps>;
     Title?: PrimitiveOverrideProps<TextProps>;
     Description?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
